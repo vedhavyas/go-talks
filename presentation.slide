@@ -1,0 +1,56 @@
+Write your next Micro-service in Go
+18 Nov 2016
+
+* Why Go?
+- C family (imperative, braces)
+- Statically typed
+- Garbage collected
+- Methods
+- Interfaces
+- Type assertions (`instanceof`)
+- Scalable
+
+* What are missing?
+- No classes
+- No inheritance
+- No constructors
+- No `final`
+- No exceptions
+- No user-defined generics
+
+* The usual suspects
+
+* Hello, World!
+.play program/hello.go
+
+* Packages
+- Every Go program is made up of packages.
+- Programs start running in package _main_.
+
+.play program/package.go
+
+This program is using the packages with import paths _fmt_, _math/rand_, and _time_.
+By convention, the package name is the same as the *last* *element* of the *import* *path*. For instance, the _math/rand_ package comprises files that begin with the statement package _rand_.
+
+* Values
+Go has various value types including strings, integers, floats, booleans, etc..
+
+.play program/values.go
+
+* Variable initializations
+- Go has 2 types of variable initializations.
+- Infers type of an initialized variable if not mentioned.
+- Variables declared without a corresponding initial values are assigned the type's *zero-value*.
+
+* Var initialization
+.play program/variables.go
+
+* Short-hand initialization and Zero values
+.play program/shorthand.go
+
+
+
+
+
+
+
