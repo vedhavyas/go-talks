@@ -34,7 +34,6 @@ By convention, the package name is the same as the *last* *element* of the *impo
 
 * Values
 Go has various value types including strings, integers, floats, booleans, etc..
-
 .play program/values.go
 
 * Variable initializations
@@ -48,9 +47,113 @@ Go has various value types including strings, integers, floats, booleans, etc..
 * Short-hand initialization and Zero values
 .play program/shorthand.go
 
+* Arrays
+- Array is the sequence of elements with fixed length
+.play program/arrays.go
 
+* Slices
+- Flexible and powerful interface over Arrays
+.play program/slices.go
 
+.link https://github.com/golang/go/wiki/SliceTricks Slice Tricks
 
+* Maps
+- Associative data types like Dict
+.play program/maps.go
 
+* Functions
+- Block of code that performs a task
+- Can return multiple return values
+- Usually the last value is of type _error_
+.play program/functions.go
 
+* Structs
+- Collection of fields
+- Useful for grouping of Data
+.play program/structs.go
 
+* Methods
+- Methods are functions that are defined a type
+.play program/methods.go
+
+* Pointers
+- Everything in Go is passed by Value i.e.. by coping
+- Pointers are references to values and types in Go
+- Go does the dereference for you
+
+* Pointers (contd...)
+.play program/pointers.go
+
+* Interfaces
+- Collection of method signatures
+
+* Interface (contd...)
+.play program/interfaces.go
+
+* Go Routines
+- A light weight thread execution
+- Concurrency is built into Go.
+- start a new routine by appending _go_ before the function call
+
+* Go Routines (contd...)
+.play program/goroutines.go
+
+* Package "net/http"
+
+* Simple HTTP Server
+.play program/hello-http.go
+
+* Handling requests
+- Requests can be handled in multiple ways in Go using interfaces.
+- Using Handle Function
+- Using Handlers
+- Using Multiplexers
+
+* Using HandlerFunc
+- Any function with _handlerFunc_ method signature is a handlerFunc
+.iframe https://tip.golang.org/pkg/net/http/#HandlerFunc 200 900
+
+* Using HandlerFunc (contd ...)
+.play program/handlerfunc.go
+
+- HelloHandler has a same method signature of handlerfunc.
+- Hence this can be passed a handlerfunc to a specific url pattern
+
+* Using Handlers
+- Any type which implements "handler" interface is a handler.
+.iframe https://tip.golang.org/pkg/net/http/#Handler 200 900
+
+* Using Handlers (contd...)
+.play program/handler.go
+
+* Using Multiplexers
+- Even multiplexers implements "handler" interface
+- Used mainly for sub-routings
+- Matches the incoming requests and forwards to respective handlers
+
+.iframe https://tip.golang.org/pkg/net/http/#ServeMux 200 900
+
+* Using Multiplexrs (contd...)
+.play program/multiplexers.go
+
+* Url Scoping
+- Go always prefers specific url to generic ones when handling requests
+.code program/urls.go /^func main/,/^}/
+
+* 3rd Party Multiplexers
+There are multiple production ready muliplexers.
+
+.link https://github.com/julienschmidt/httprouter Julienschmidt's Httprouter
+.link https://github.com/gorilla/mux Gorilla Mux
+.link https://github.com/go-zoo/bone Bone Mux
+
+* Testing
+- Test files in Go ends with "_test.go"
+.code hello/handlerfunc.go /^func HelloHandler/,/^}/
+.code hello/handlerfunc_test.go /^func TestHelloHandler/,/^}/
+
+* Json Marshalling
+.play program/jsonexamples.go
+
+* Json Unmarshalling
+.play program/unmarshalling.go
